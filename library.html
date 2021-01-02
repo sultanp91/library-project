@@ -10,21 +10,23 @@
         <title>Odin Project Library</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="icon-styles.css">
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
 
         <header>
 
-            <h1>Book Library</h1>
+            <h1><i class="icon-basic-book"></i>Book Library</h1>
 
-            <p>This is a project using Object Constructors to manage a Library.</p>
+            <h3>This is a project using Object Constructors to manage a Library.</h3>
 
             <button id="newbook">New Book</button>
 
         </header>
 
-        <form class="form-container display" id="form-container">
+        <form class="form-container" id="form-container">
             <input type="text" id="bookname" placeholder="Book Name">
             <input type="text" id="author" placeholder="Author">
             <input type="number" name="totalpages" id="totalpages" placeholder="Number of pages">
@@ -33,8 +35,6 @@
                 <option value="Unread">Unread</option>
             </select>
             <button id="addbook">Add Book</button>
-            <button id="closeform">Close form</button>
-
         </form>
 
 

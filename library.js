@@ -7,7 +7,6 @@ const bookRead = document.getElementById("readstatus");
 const addButton = document.getElementById("addbook");
 const table = document.getElementById("tbody");
 const newBookButton = document.getElementById("newbook");
-const closeFormButton = document.getElementById("closeform")
 
 const formContainer = document.getElementById("form-container");
 
@@ -20,17 +19,20 @@ const generateTable = function () {
                         <td id=${i}>${myLibrary[i].author}</td>
                         <td id=${i}>${myLibrary[i].numPages}</td>
                         <td class="completion" id=${i}>${myLibrary[i].bookRead}</td>
-                        <td class="delete" id=${i}>Delete</td>`;
+                        <td class="delete" id=${i}>Delete<i class="icon-basic-trashcan"></></td>`;
 
     table.appendChild(newRow);
 }}
 
 newBookButton.addEventListener("click", () => {
-    formContainer.style.display = "block";
-})
-
-closeFormButton.addEventListener("click", () => {
-    formContainer.style.display = "none";
+    if(formContainer.style.display === "none"){
+        formContainer.style.display = "block";
+        newBookButton.textContent = "Close Form"
+    } else {
+        newBookButton.textContent = "New Book"
+        formContainer.style.display = "none";
+    }
+    
 })
 
 addButton.addEventListener("click", function (evt) {
