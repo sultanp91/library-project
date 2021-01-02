@@ -10,16 +10,21 @@
         <title>Odin Project Library</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="main.css">
     </head>
     <body>
 
-        <h1>Book Library</h1>
+        <header>
 
-        <p>This is a simple library peoject using Object Constructors to manage a Library.</p>
+            <h1>Book Library</h1>
 
-        <form>
-            
+            <p>This is a project using Object Constructors to manage a Library.</p>
+
+            <button id="newbook">New Book</button>
+
+        </header>
+
+        <form class="form-container display" id="form-container">
             <input type="text" id="bookname" placeholder="Book Name">
             <input type="text" id="author" placeholder="Author">
             <input type="number" name="totalpages" id="totalpages" placeholder="Number of pages">
@@ -28,9 +33,10 @@
                 <option value="Unread">Unread</option>
             </select>
             <button id="addbook">Add Book</button>
-
+            <button id="closeform">Close form</button>
 
         </form>
+
 
         <hr>
 
@@ -42,7 +48,6 @@
                     <th>Author</th>
                     <th>Number of pages</th>
                     <th>Read Status</th>
-                    <th>Change Read Status</th>
                     <th>Delete</th>
                 </tr>
              </thead>

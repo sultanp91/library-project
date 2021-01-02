@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+h1 {
+    font-size: 4rem;
+    padding: 5rem 0;
+    text-align: center;
+    background-image: linear-gradient(to left, #1459C4, rgba(#1459C4, 0.8));
+}
+
+header p {
+    margin: 0 auto;
+    width: 80%;
+    padding: 2rem 0;
+    font-size: 1.6rem;
+}
+
+form {
+    width: 80%;
+    margin: 3rem auto;
+}
+
+.display {
+    display: block;
+}
+
+#newbook {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding: 4rem 7rem;
+    background: #49c435;
+    border: none;
+    outline: none;
+    box-shadow: 0rem .5rem 1rem .5rem rgba(0,0,0,0.4);
+
+    &:hover {
+    box-shadow: 0rem .5rem 1rem 1rem rgba(0,0,0,0.4);
+    }
+
+    &:active {
+        box-shadow: 0rem .5rem 1rem 0rem rgba(0,0,0,0.4);
+
+    }
+}

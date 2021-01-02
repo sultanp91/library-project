@@ -5,7 +5,12 @@ const author = document.getElementById("author");
 const bookPages = document.getElementById("totalpages");
 const bookRead = document.getElementById("readstatus");
 const addButton = document.getElementById("addbook");
-const table = document.getElementById("tbody")
+const table = document.getElementById("tbody");
+const newBookButton = document.getElementById("newbook");
+const closeFormButton = document.getElementById("closeform")
+
+const formContainer = document.getElementById("form-container");
+
 
 const generateTable = function () {
     table.innerHTML = "";
@@ -14,13 +19,19 @@ const generateTable = function () {
     newRow.innerHTML = `<td id=${i}>${myLibrary[i].name}</td>
                         <td id=${i}>${myLibrary[i].author}</td>
                         <td id=${i}>${myLibrary[i].numPages}</td>
-                        <td id=${i}>${myLibrary[i].bookRead}</td>
-                        <td class="completion" id=${i}>Change status</td> 
+                        <td class="completion" id=${i}>${myLibrary[i].bookRead}</td>
                         <td class="delete" id=${i}>Delete</td>`;
 
     table.appendChild(newRow);
 }}
 
+newBookButton.addEventListener("click", () => {
+    formContainer.style.display = "block";
+})
+
+closeFormButton.addEventListener("click", () => {
+    formContainer.style.display = "none";
+})
 
 addButton.addEventListener("click", function (evt) {
     evt.preventDefault();
@@ -42,10 +53,10 @@ table.addEventListener("click", function(evt) {
 if(evt.target.className == "delete"){
     myLibrary.splice(evt.target.id, 1)
     generateTable();
-} else if(evt.target.className == "completion" || myLibrary[evt.target.id].bookRead == "Read"){
+} else if(evt.target.className == "completion" && myLibrary[evt.target.id].bookRead == "Read"){
     myLibrary[evt.target.id].bookRead = "Unread"
     generateTable()
-} else if(evt.target.className == "completion" || myLibrary[evt.target.id].bookRead == "Unread"){
+} else if(evt.target.className == "completion" && myLibrary[evt.target.id].bookRead == "Unread"){
     myLibrary[evt.target.id].bookRead = "Read"
     generateTable()
 }
