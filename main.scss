@@ -40,7 +40,7 @@ form {
 .form-container {
     display: block;
     width: 80%;
-    margin: 4rem auto;
+    margin: 3rem auto;
     text-align: center;
 
 }
@@ -70,7 +70,7 @@ form {
 
 hr {
     width: 80%;
-    margin: 1rem auto;
+    margin: 1.5rem auto;
 }
 
 table {
@@ -79,7 +79,10 @@ table {
     text-align: center;
     thead{
         font-size: 2rem;
-        background-color: burlywood;
+        background-color: #7f7fe6;
+    }
+    tbody tr{
+        background-color:lavender
     }
 
 

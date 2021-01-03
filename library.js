@@ -37,18 +37,25 @@ newBookButton.addEventListener("click", () => {
 
 addButton.addEventListener("click", function (evt) {
     evt.preventDefault();
-    
+
+    if(book.value === "" || author.value === "" || bookPages.value === ""){
+        alert("Please fill in all fields before adding a book") 
+    } else {
+        
     let newBook = {
-    name: book.value,
-    author: author.value,
-    numPages: bookPages.value,
-    bookRead: bookRead.value,
+        name: book.value,
+        author: author.value,
+        numPages: bookPages.value,
+        bookRead: bookRead.value,
+        }
+    
+        myLibrary.push(newBook);
+        document.querySelector("form").reset();
+    
+        generateTable();
+
     }
-
-    myLibrary.push(newBook);
-    document.querySelector("form").reset();
-
-    generateTable();
+    
 })
 
 table.addEventListener("click", function(evt) {
