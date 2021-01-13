@@ -35,19 +35,33 @@ newBookButton.addEventListener("click", () => {
     
 })
 
+class Book {
+    constructor(name, author, numPages, bookRead) {
+        this.name = name;
+        this.author = author;
+        this.numPages = numPages;
+        this.bookRead = bookRead;
+    }
+}
+
 addButton.addEventListener("click", function (evt) {
     evt.preventDefault();
 
     if(book.value === "" || author.value === "" || bookPages.value === ""){
         alert("Please fill in all fields before adding a book") 
     } else {
-        
+       
+     let newBook = new Book(book.value, author.value, bookPages.value, bookRead.value);   
+
+     /*   
     let newBook = {
         name: book.value,
         author: author.value,
         numPages: bookPages.value,
         bookRead: bookRead.value,
         }
+
+    */    
     
         myLibrary.push(newBook);
         document.querySelector("form").reset();
